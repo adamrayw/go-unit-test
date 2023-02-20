@@ -5,6 +5,14 @@ import (
 	"testing"
 )
 
+// The function `BenchmarkHelloWorld` takes a pointer to a `testing.B` struct and returns nothing
+func BenchmarkHelloWorld(b *testing.B) {
+	// Calling the function `HelloWorld` with the parameter `Adam` `b.N` times.
+	for i := 0; i < b.N; i++ {
+		HelloWorld("Adam")
+	}
+}
+
 func TestHelloWorld(t *testing.T) {
 	// Calling the function `HelloWorld` with the parameter `Adam` and assigning the result to the
 	// variable `result`.
